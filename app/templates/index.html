@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+
+<h1>Welcome, {% if current_user.name %}{{ current_user.name }}{% elif current_user.email %}{{ current_user.email }}{% else %}Anonymous{% endif %}!</h1>
+
+{% endblock %}

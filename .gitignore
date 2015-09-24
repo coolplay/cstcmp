@@ -1,0 +1,6 @@
+*.pyc
+*.db
+app/static/
+migrations/
+tmp/
+venv/

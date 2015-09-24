@@ -1,0 +1,33 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}海峡两岸统计物理与凝聚态理论研究中心{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav navbar-right">
+			{% if current_user.is_authenticated %}
+			<li><a href="{{ url_for('logout') }}">Log Out</a></li>
+			{% else %}
+			<li><a href="{{ url_for('login') }}">Log In</a></li>
+			{% endif %}
+		</ul>
+	</div>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+
+	{% for message in get_flashed_messages() %}
+	<div class="alert alert-warning">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		{{ message }}
+	</div>
+	{% endfor %}
+
+	{% block page_content %}{% endblock %}
+
+</div>
+{% endblock %}
