@@ -1,5 +1,9 @@
 {% extends "bootstrap/base.html" %}
 {% block title %}海峡两岸统计物理与凝聚态理论研究中心{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}
 
 {% block navbar %}
 <nav class="navbar navbar-inverse">
